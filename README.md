@@ -23,7 +23,7 @@ Ce TP explore les mécanismes clefs de JavaFX : Les propriétés, les bindings.
 
 La première chose que vous allez faire est de créer un fork d'un dépôt. Pour ce faire, rendez-vous sur le lien suivant : 
 
-[https://classroom.github.com/a/hh3u00mM](https://classroom.github.com/a/hh3u00mM) 
+[https://classroom.github.com/a/fjwdgqUi](https://classroom.github.com/a/fjwdgqUi) 
 
 Comme pour les précédents TP, GitHub va vous créer un dépôt contenant un fork du dépôt 'IUTInfoAix-m2105/tp3' et s'appellant 'IUTInfoAix-m2105/tp3-votreUsername'. 
 Vous apparaîtrez automatiquement comme contributeur de ce projet pour y pousser votre travail.
