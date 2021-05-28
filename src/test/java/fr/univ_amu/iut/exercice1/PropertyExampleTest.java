@@ -50,7 +50,7 @@ public class PropertyExampleTest {
         verify(out).println("set() with 1024.");
     }
 
-    @Disabled
+    //@Disabled
     @Test
     public void addAndRemoveChangeListener() throws Exception {
 

@@ -47,7 +47,21 @@ public class PropertyExample {
     }
 
     void addAndRemoveChangeListener() {
-        throw new RuntimeException("Not yet implemented !");
+        System.out.println();
+        System.out.println("Add change listener.");
+        changeListener = (observable, oldValue, newValue) -> System.out.println("The observableValue has changed: oldValue = " + oldValue + ", newValue = "+ newValue);
+        anIntProperty.addListener(changeListener);
+        System.out.println("setValue() with 1024.");
+        anIntProperty.setValue(1024);
+        System.out.println("set() with 2105.");
+        anIntProperty.set(2105);
+
+        System.out.println("setValue() with 5012.");
+        anIntProperty.setValue(5012);
+        System.out.println("Remove change listener.");
+        anIntProperty.removeListener(changeListener);
+        System.out.println("set() with 1024.");
+        anIntProperty.set(1024);
     }
 
 
