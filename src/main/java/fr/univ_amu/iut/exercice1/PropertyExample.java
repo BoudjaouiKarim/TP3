@@ -20,14 +20,30 @@ public class PropertyExample {
 
     void createProperty() {
         anIntProperty = new SimpleIntegerProperty(1024);
+
         System.out.println();
         System.out.println("anIntProperty = " + anIntProperty);
         System.out.println("anIntProperty.get() = " + anIntProperty.get());
-        System.out.println("anIntProperty.getValue() = " + anIntProperty.getValue());
+        System.out.println("anIntProperty.getValue() = "+ anIntProperty.getValue());
     }
 
     void addAndRemoveInvalidationListener() {
-        throw new RuntimeException("Not yet implemented !");
+
+        System.out.println();
+        System.out.println("Add invalidation listener.");
+        invalidationListener = observable -> System.out.println("The observable has been invalidated.");
+
+        anIntProperty.addListener(invalidationListener);
+        System.out.println("setValue() with 1024.");
+        anIntProperty.setValue(1024);
+        System.out.println("set() with 2105.");
+        anIntProperty.set(2105);
+        System.out.println("setValue() with 5012.");
+        anIntProperty.setValue(5012);
+        System.out.println("Remove invalidation listener.");
+        anIntProperty.removeListener(invalidationListener);
+        System.out.println("set() with 1024.");
+        anIntProperty.set(1024);
     }
 
     void addAndRemoveChangeListener() {

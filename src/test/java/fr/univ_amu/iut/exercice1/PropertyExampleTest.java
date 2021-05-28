@@ -34,7 +34,7 @@ public class PropertyExampleTest {
         verify(out).println("anIntProperty.getValue() = 1024");
     }
 
-    @Disabled
+    //@Disabled
     @Test
     public void addAndRemoveInvalidationListener() throws Exception {
 
