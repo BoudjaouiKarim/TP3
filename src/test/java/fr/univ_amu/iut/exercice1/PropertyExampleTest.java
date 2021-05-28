@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-@Disabled
+//@Disabled
 public class PropertyExampleTest {
 
     @Mock PrintStream out;
@@ -23,7 +23,7 @@ public class PropertyExampleTest {
         propertyExample.setAnInt(1024);
     }
 
-    @Disabled
+    //@Disabled
     @Test
     public void createProperty() throws Exception {
         propertyExample.createProperty();
