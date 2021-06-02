@@ -140,7 +140,9 @@ public class TriangleArea {
     }
 
     void printResult() {
-        throw new RuntimeException("Not yet implemented !");
+        System.out.println("For P1("+ x1.getValue()+","+y1.getValue()+
+                             "), P2("+ x2.getValue()+","+y2.getValue()+
+                            "), P3("+ x3.getValue()+","+y3.getValue()+"), the area of triangle ABC is "+area.getValue());
     }
 
     private void createBinding() {
