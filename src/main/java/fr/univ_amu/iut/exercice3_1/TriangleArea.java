@@ -1,10 +1,14 @@
 package fr.univ_amu.iut.exercice3_1;
 
 
+import javafx.beans.binding.Bindings;
 import javafx.beans.binding.NumberBinding;
 import javafx.beans.binding.StringExpression;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+
+import static javafx.beans.binding.Bindings.*;
+import static javafx.beans.binding.Bindings.divide;
 
 public class TriangleArea {
 
@@ -63,10 +67,26 @@ public class TriangleArea {
     }
 
     void printResult() {
-        throw new RuntimeException("Not yet implemented !");
+        System.out.println(output.getValue());
     }
 
     private void createBinding() {
-        throw new RuntimeException("Not yet implemented !");
+
+        NumberBinding x1y2 = x1.multiply(y2);
+        NumberBinding x1y3 = x1.multiply(y3);
+        NumberBinding x2y3 = x2.multiply(y3);
+        NumberBinding x2y1 = x2.multiply(y1);
+        NumberBinding x3y1 = x3.multiply(y1);
+        NumberBinding x3y2 = x3.multiply(y2);
+        NumberBinding diff = x1y2.subtract(x1y3);
+        NumberBinding diff2 = x2y3.subtract(x2y1);
+        NumberBinding diff3 = x3y1.subtract(x3y2);
+        NumberBinding somme = diff.add(diff2).add(diff3);
+
+        NumberBinding res = when(lessThanOrEqual(0, somme)).then(somme).otherwise(negate(somme));// Valeur Absolue
+        area = res.divide(2.0);
+
+        output = format("For P1(%d,%d), P2(%d,%d), P3(%d,%d), the area of triangle ABC is %.1f", x1, y1, x2, y2, x3, y3, area);
+
     }
 }
